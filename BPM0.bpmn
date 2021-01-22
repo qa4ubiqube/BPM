@@ -20,15 +20,6 @@
     <bpmn:sequenceFlow id="Flow_163mc4u" sourceRef="Activity_0btti5q" targetRef="Event_1qxr8qr" />
     <bpmn:sequenceFlow id="Flow_1l73sa2" sourceRef="StartEvent_1" targetRef="Activity_14r6c0f" />
     <bpmn:sequenceFlow id="Flow_06vptzp" sourceRef="Activity_14r6c0f" targetRef="Gateway_03enm2t" />
-    <bpmn:serviceTask id="Activity_14r6c0f" name="Proc (sampleWF)" camunda:type="external" camunda:topic="msa_workflow">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="workflow_data">{"ubiqubeId":"PLACEHOLDER_UBIQUBE_ID","serviceName":"Process/workflows/sampleWF/sampleWF","processName":"Process/workflows/sampleWF/Process_Proc","processType":"CREATE","processVariables":{"var_name":"abc","var_name2":"123"},"resumeOnFail":true}</camunda:inputParameter>
-        </camunda:inputOutput>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1l73sa2</bpmn:incoming>
-      <bpmn:outgoing>Flow_06vptzp</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:serviceTask id="Activity_0btti5q" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
@@ -37,6 +28,15 @@
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0mhabb3</bpmn:incoming>
       <bpmn:outgoing>Flow_163mc4u</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_14r6c0f" name="Proc (sampleWF)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">{"ubiqubeId":"PLACEHOLDER_UBIQUBE_ID","serviceName":"Process/workflows/sampleWF/sampleWF","processName":"Process/workflows/sampleWF/Process_Proc","processType":"CREATE","processVariables":{"var_name":"abc","var_name2":"123"},"resumeOnFail":false}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1l73sa2</bpmn:incoming>
+      <bpmn:outgoing>Flow_06vptzp</bpmn:outgoing>
     </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -86,11 +86,11 @@
           <dc:Bounds x="934" y="148" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1611306443651_di" bpmnElement="Activity_14r6c0f">
-        <dc:Bounds x="400" y="150" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1611306506195_di" bpmnElement="Activity_0btti5q">
         <dc:Bounds x="760" y="320" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1611307217108_di" bpmnElement="Activity_14r6c0f">
+        <dc:Bounds x="400" y="150" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
