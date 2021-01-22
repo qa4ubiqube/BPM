@@ -5,7 +5,7 @@
       <bpmn:outgoing>Flow_1l73sa2</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:exclusiveGateway id="Gateway_03enm2t" name="Gateway_03enm2t" default="Flow_14239o0">
-      <bpmn:incoming>Flow_06vptzp</bpmn:incoming>
+      <bpmn:incoming>Flow_1wlkslj</bpmn:incoming>
       <bpmn:outgoing>Flow_14239o0</bpmn:outgoing>
       <bpmn:outgoing>Flow_0mhabb3</bpmn:outgoing>
     </bpmn:exclusiveGateway>
@@ -19,7 +19,6 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_163mc4u" sourceRef="Activity_0btti5q" targetRef="Event_1qxr8qr" />
     <bpmn:sequenceFlow id="Flow_1l73sa2" sourceRef="StartEvent_1" targetRef="Activity_14r6c0f" />
-    <bpmn:sequenceFlow id="Flow_06vptzp" sourceRef="Activity_14r6c0f" targetRef="Gateway_03enm2t" />
     <bpmn:serviceTask id="Activity_0btti5q" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
@@ -36,15 +35,19 @@
         </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1l73sa2</bpmn:incoming>
-      <bpmn:outgoing>Flow_06vptzp</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1pdrjhs</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_13xwcgi" name="Event_13xwcgi">
+      <bpmn:incoming>Flow_1pdrjhs</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wlkslj</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_0o86yc1" signalRef="Signal_0o86yc1" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1pdrjhs" sourceRef="Activity_14r6c0f" targetRef="Event_13xwcgi" />
+    <bpmn:sequenceFlow id="Flow_1wlkslj" sourceRef="Event_13xwcgi" targetRef="Gateway_03enm2t" />
   </bpmn:process>
+  <bpmn:signal id="Signal_0o86yc1" name="Signal_0o86yc1" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_06vptzp_di" bpmnElement="Flow_06vptzp">
-        <di:waypoint x="500" y="190" />
-        <di:waypoint x="605" y="190" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1l73sa2_di" bpmnElement="Flow_1l73sa2">
         <di:waypoint x="209" y="120" />
         <di:waypoint x="305" y="120" />
@@ -68,6 +71,17 @@
         <di:waypoint x="655" y="190" />
         <di:waypoint x="942" y="190" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pdrjhs_di" bpmnElement="Flow_1pdrjhs">
+        <di:waypoint x="500" y="190" />
+        <di:waypoint x="511" y="190" />
+        <di:waypoint x="511" y="120" />
+        <di:waypoint x="522" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1wlkslj_di" bpmnElement="Flow_1wlkslj">
+        <di:waypoint x="558" y="120" />
+        <di:waypoint x="630" y="120" />
+        <di:waypoint x="630" y="165" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="173" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -77,7 +91,7 @@
       <bpmndi:BPMNShape id="Gateway_03enm2t_di" bpmnElement="Gateway_03enm2t" isMarkerVisible="true">
         <dc:Bounds x="605" y="165" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="586" y="128" width="87" height="27" />
+          <dc:Bounds x="507.5" y="176" width="87" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1qxr8qr_di" bpmnElement="Event_1qxr8qr">
@@ -91,6 +105,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1611310034385_di" bpmnElement="Activity_14r6c0f">
         <dc:Bounds x="400" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_13xwcgi_di" bpmnElement="Event_13xwcgi">
+        <dc:Bounds x="522" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="502" y="145" width="77" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
