@@ -14,8 +14,8 @@
       <bpmn:incoming>Flow_163mc4u</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_14239o0" sourceRef="Gateway_03enm2t" targetRef="Event_1qxr8qr" />
-    <bpmn:sequenceFlow id="Flow_0mhabb3" name="Proc (sampleWF) == Success" sourceRef="Gateway_03enm2t" targetRef="Activity_0btti5q">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_14r6c0f).prop("status").value() == 'ENDED'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="Flow_0mhabb3" name="Proc (sampleWF) == Failed" sourceRef="Gateway_03enm2t" targetRef="Activity_0btti5q">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_14r6c0f).prop("status").value() == 'FAIL'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_163mc4u" sourceRef="Activity_0btti5q" targetRef="Event_1qxr8qr" />
     <bpmn:sequenceFlow id="Flow_1l73sa2" sourceRef="StartEvent_1" targetRef="Activity_14r6c0f" />
