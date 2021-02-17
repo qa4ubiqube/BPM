@@ -34,17 +34,13 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
+      <bpmndi:BPMNEdge id="Flow_157neh3_di" bpmnElement="Flow_157neh3">
+        <di:waypoint x="590" y="390" />
+        <di:waypoint x="912" y="390" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1cpwoom_di" bpmnElement="Flow_1cpwoom">
         <di:waypoint x="278" y="390" />
-        <di:waypoint x="414" y="390" />
-        <di:waypoint x="414" y="310" />
-        <di:waypoint x="550" y="310" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_157neh3_di" bpmnElement="Flow_157neh3">
-        <di:waypoint x="650" y="310" />
-        <di:waypoint x="781" y="310" />
-        <di:waypoint x="781" y="390" />
-        <di:waypoint x="912" y="390" />
+        <di:waypoint x="490" y="390" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="242" y="372" width="36" height="36" />
@@ -59,7 +55,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1613587548104_di" bpmnElement="Activity_1u87fw5">
-        <dc:Bounds x="550" y="270" width="100" height="80" />
+        <dc:Bounds x="490" y="350" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
