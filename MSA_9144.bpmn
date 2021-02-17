@@ -77,15 +77,19 @@
       <bpmn:incoming>Flow_17z8ng3</bpmn:incoming>
       <bpmn:outgoing>Flow_04e8su1</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1" default="Flow_0yx8m6n">
+    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1">
       <bpmn:incoming>Flow_15d982e</bpmn:incoming>
       <bpmn:outgoing>Flow_0yx8m6n</bpmn:outgoing>
       <bpmn:outgoing>Flow_17z8ng3</bpmn:outgoing>
       <bpmn:outgoing>Flow_1mzu5ce</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_15d982e" sourceRef="Activity_15cinds" targetRef="Gateway_1acxdz1" />
-    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) != Failed" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb" />
-    <bpmn:sequenceFlow id="Flow_17z8ng3" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl" />
+    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) == Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() == 'WARNING'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_17z8ng3" name="p1 (testWFSample) != Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() != 'WARNING'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0ch1rkt" sourceRef="Activity_0zq8clb" targetRef="Event_1ezif17" />
     <bpmn:sequenceFlow id="Flow_04e8su1" sourceRef="Activity_1sdo9fl" targetRef="Event_1ezif17" />
     <bpmn:serviceTask id="Activity_06xlei0" name="Ping (PingME)" camunda:type="external" camunda:topic="msa_workflow">
@@ -145,13 +149,16 @@
         <di:waypoint x="720" y="455" />
         <di:waypoint x="720" y="640" />
         <di:waypoint x="860" y="640" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="690" y="545" width="90" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0yx8m6n_di" bpmnElement="Flow_0yx8m6n">
         <di:waypoint x="720" y="405" />
         <di:waypoint x="720" y="160" />
         <di:waypoint x="860" y="160" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="725" y="240" width="90" height="40" />
+          <dc:Bounds x="731" y="240" width="78" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15d982e_di" bpmnElement="Flow_15d982e">
