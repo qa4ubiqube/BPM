@@ -77,7 +77,7 @@
       <bpmn:incoming>Flow_17z8ng3</bpmn:incoming>
       <bpmn:outgoing>Flow_04e8su1</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1">
+    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1" default="Flow_1mzu5ce">
       <bpmn:incoming>Flow_15d982e</bpmn:incoming>
       <bpmn:outgoing>Flow_0yx8m6n</bpmn:outgoing>
       <bpmn:outgoing>Flow_17z8ng3</bpmn:outgoing>
@@ -115,9 +115,7 @@
       <bpmn:incoming>Flow_1mzu5ce</bpmn:incoming>
       <bpmn:outgoing>Flow_1x5198q</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_1mzu5ce" name="p1 (testWFSample) == Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_06xlei0">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() == 'WARNING'}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1mzu5ce" name="p1 (testWFSample) == Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_06xlei0" />
     <bpmn:sequenceFlow id="Flow_1x5198q" sourceRef="Activity_06xlei0" targetRef="Event_1ezif17" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
