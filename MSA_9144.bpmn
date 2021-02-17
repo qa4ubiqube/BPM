@@ -77,16 +77,14 @@
       <bpmn:incoming>Flow_17z8ng3</bpmn:incoming>
       <bpmn:outgoing>Flow_04e8su1</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1" default="Flow_17z8ng3">
+    <bpmn:exclusiveGateway id="Gateway_1acxdz1" name="Gateway_1acxdz1" default="Flow_0yx8m6n">
       <bpmn:incoming>Flow_15d982e</bpmn:incoming>
       <bpmn:outgoing>Flow_0yx8m6n</bpmn:outgoing>
       <bpmn:outgoing>Flow_17z8ng3</bpmn:outgoing>
       <bpmn:outgoing>Flow_1mzu5ce</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_15d982e" sourceRef="Activity_15cinds" targetRef="Gateway_1acxdz1" />
-    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) != Failed" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() != 'FAIL'}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) != Failed" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb" />
     <bpmn:sequenceFlow id="Flow_17z8ng3" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl" />
     <bpmn:sequenceFlow id="Flow_0ch1rkt" sourceRef="Activity_0zq8clb" targetRef="Event_1ezif17" />
     <bpmn:sequenceFlow id="Flow_04e8su1" sourceRef="Activity_1sdo9fl" targetRef="Event_1ezif17" />
