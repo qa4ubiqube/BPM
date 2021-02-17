@@ -3,11 +3,11 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>MSA-9144</value>
+            <value>MSA_9144.bpmn</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1613584418508</value>
+            <value>1613584488128</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -15,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1613584418504</value>
+            <value>1613584488124</value>
         </entry>
         <entry>
             <key>TAG</key>
