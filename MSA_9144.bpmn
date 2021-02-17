@@ -84,8 +84,8 @@
       <bpmn:outgoing>Flow_1mzu5ce</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_15d982e" sourceRef="Activity_15cinds" targetRef="Gateway_1acxdz1" />
-    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) != Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() != 'WARNING'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) == Success" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() == 'ENDED'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_17z8ng3" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl" />
     <bpmn:sequenceFlow id="Flow_0ch1rkt" sourceRef="Activity_0zq8clb" targetRef="Event_1ezif17" />
@@ -113,8 +113,8 @@
       <bpmn:incoming>Flow_1mzu5ce</bpmn:incoming>
       <bpmn:outgoing>Flow_1x5198q</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_1mzu5ce" name="p1 (testWFSample) != Failed" sourceRef="Gateway_1acxdz1" targetRef="Activity_06xlei0">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() != 'FAIL'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="Flow_1mzu5ce" name="p1 (testWFSample) == Success" sourceRef="Gateway_1acxdz1" targetRef="Activity_06xlei0">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() == 'ENDED'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1x5198q" sourceRef="Activity_06xlei0" targetRef="Event_1ezif17" />
   </bpmn:process>
@@ -128,7 +128,7 @@
         <di:waypoint x="745" y="430" />
         <di:waypoint x="870" y="430" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="785" y="350" width="90" height="40" />
+          <dc:Bounds x="791" y="350" width="78" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_04e8su1_di" bpmnElement="Flow_04e8su1">
@@ -153,7 +153,7 @@
         <di:waypoint x="720" y="160" />
         <di:waypoint x="860" y="160" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="690" y="280" width="90" height="40" />
+          <dc:Bounds x="711" y="240" width="78" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15d982e_di" bpmnElement="Flow_15d982e">
@@ -188,7 +188,7 @@
       <bpmndi:BPMNShape id="Gateway_1acxdz1_di" bpmnElement="Gateway_1acxdz1" isMarkerVisible="true">
         <dc:Bounds x="695" y="405" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="755" y="423" width="90" height="14" />
+          <dc:Bounds x="765" y="455" width="90" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1613584511202_di" bpmnElement="Activity_06xlei0">
