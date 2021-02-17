@@ -87,8 +87,8 @@
     <bpmn:sequenceFlow id="Flow_0yx8m6n" name="p1 (testWFSample) == Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_0zq8clb">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() == 'WARNING'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_17z8ng3" name="p1 (testWFSample) != Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_15cinds).prop("status").value() != 'WARNING'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="Flow_17z8ng3" name="Ping (PingME) != Warning" sourceRef="Gateway_1acxdz1" targetRef="Activity_1sdo9fl">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_06xlei0).prop("status").value() != 'WARNING'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0ch1rkt" sourceRef="Activity_0zq8clb" targetRef="Event_1ezif17" />
     <bpmn:sequenceFlow id="Flow_04e8su1" sourceRef="Activity_1sdo9fl" targetRef="Event_1ezif17" />
@@ -148,7 +148,7 @@
         <di:waypoint x="720" y="640" />
         <di:waypoint x="860" y="640" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="690" y="545" width="90" height="40" />
+          <dc:Bounds x="695" y="545" width="81" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0yx8m6n_di" bpmnElement="Flow_0yx8m6n">
