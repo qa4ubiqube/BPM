@@ -2,7 +2,7 @@
 <bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
   <bpmn:process id="PLACEHOLDER_PROCESS_ID" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Start Event" />
-    <bpmn:serviceTask id="Activity_0hiuhu1" name="Helloworld" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_0hiuhu1" name="delete instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -14,8 +14,12 @@
                 <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
               </camunda:entry>
               <camunda:entry key="serviceInstanceId" />
-              <camunda:entry key="processName" />
-              <camunda:entry key="processType" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_delete_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>DELETE</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map />
               </camunda:entry>
@@ -34,7 +38,7 @@
           <dc:Bounds x="162.5" y="145" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1614019758877_di" bpmnElement="Activity_0hiuhu1">
+      <bpmndi:BPMNShape id="ServiceTask_1614019800714_di" bpmnElement="Activity_0hiuhu1">
         <dc:Bounds x="710" y="160" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
