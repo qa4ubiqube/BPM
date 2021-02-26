@@ -7,7 +7,9 @@
     <bpmn:endEvent id="Event_07noia2" name="End Event">
       <bpmn:incoming>Flow_1cdqdpw</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Activity_0hfo98n" name="upd (sampleWF)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:sequenceFlow id="Flow_1c7zlfa" sourceRef="StartEvent_1" targetRef="Activity_0hfo98n" />
+    <bpmn:sequenceFlow id="Flow_1cdqdpw" sourceRef="Activity_0hfo98n" targetRef="Event_07noia2" />
+    <bpmn:serviceTask id="Activity_0hfo98n" name="upd (Customer_Python_SDK)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -16,51 +18,48 @@
                 <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
               </camunda:entry>
               <camunda:entry key="serviceName">
-                <camunda:value>Process/workflows/sampleWF/sampleWF</camunda:value>
+                <camunda:value>Process/SDC/Customer/WF_SDK_Python</camunda:value>
               </camunda:entry>
               <camunda:entry key="serviceInstanceId">
-                <camunda:value>120073</camunda:value>
+                <camunda:value>27801</camunda:value>
               </camunda:entry>
               <camunda:entry key="processName">
-                <camunda:value>Process/workflows/sampleWF/Process_upd</camunda:value>
+                <camunda:value>Process/SDC/Customer/Process_upd</camunda:value>
               </camunda:entry>
               <camunda:entry key="processType">
                 <camunda:value>UPDATE</camunda:value>
               </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map>
-                  <camunda:entry key="c" />
-                  <camunda:entry key="TASKINSTANCEID">
-                    <camunda:value>123587</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="bool" />
-                  <camunda:entry key="compo" />
-                  <camunda:entry key="EXECNUMBER">
-                    <camunda:value>1</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="UBIQUBEID">
-                    <camunda:value>CPEA992</camunda:value>
-                  </camunda:entry>
                   <camunda:entry key="SERVICEINSTANCEREFERENCE">
-                    <camunda:value>CPESID120073</camunda:value>
+                    <camunda:value>CPESID27801</camunda:value>
                   </camunda:entry>
                   <camunda:entry key="TASKID">
                     <camunda:value>1</camunda:value>
                   </camunda:entry>
                   <camunda:entry key="PROCESSINSTANCEID">
-                    <camunda:value>121319</camunda:value>
+                    <camunda:value>121322</camunda:value>
                   </camunda:entry>
-                  <camunda:entry key="var_name2">
-                    <camunda:value>1246</camunda:value>
+                  <camunda:entry key="TASKINSTANCEID">
+                    <camunda:value>123590</camunda:value>
                   </camunda:entry>
                   <camunda:entry key="service_id">
-                    <camunda:value>120073</camunda:value>
+                    <camunda:value>27801</camunda:value>
                   </camunda:entry>
-                  <camunda:entry key="var_name">
-                    <camunda:value>abc</camunda:value>
+                  <camunda:entry key="EXECNUMBER">
+                    <camunda:value>1</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="customer_name">
+                    <camunda:value>blabla</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="UBIQUBEID">
+                    <camunda:value>CPEA992</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="customer_id">
+                    <camunda:value>5593</camunda:value>
                   </camunda:entry>
                   <camunda:entry key="SERVICEINSTANCEID">
-                    <camunda:value>120073</camunda:value>
+                    <camunda:value>27801</camunda:value>
                   </camunda:entry>
                 </camunda:map>
               </camunda:entry>
@@ -72,18 +71,16 @@
       <bpmn:incoming>Flow_1c7zlfa</bpmn:incoming>
       <bpmn:outgoing>Flow_1cdqdpw</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_1c7zlfa" sourceRef="StartEvent_1" targetRef="Activity_0hfo98n" />
-    <bpmn:sequenceFlow id="Flow_1cdqdpw" sourceRef="Activity_0hfo98n" targetRef="Event_07noia2" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_1c7zlfa_di" bpmnElement="Flow_1c7zlfa">
-        <di:waypoint x="248" y="300" />
-        <di:waypoint x="560" y="300" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1cdqdpw_di" bpmnElement="Flow_1cdqdpw">
         <di:waypoint x="660" y="300" />
         <di:waypoint x="1002" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c7zlfa_di" bpmnElement="Flow_1c7zlfa">
+        <di:waypoint x="248" y="300" />
+        <di:waypoint x="560" y="300" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="212" y="282" width="36" height="36" />
@@ -97,7 +94,7 @@
           <dc:Bounds x="995" y="325" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1614330520927_di" bpmnElement="Activity_0hfo98n">
+      <bpmndi:BPMNShape id="ServiceTask_1614331032821_di" bpmnElement="Activity_0hfo98n">
         <dc:Bounds x="560" y="260" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
