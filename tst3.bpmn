@@ -6,7 +6,6 @@
     </bpmn:startEvent>
     <bpmn:endEvent id="Event_0u3tycq" name="End Event">
       <bpmn:incoming>Flow_1ulf5g3</bpmn:incoming>
-      <bpmn:incoming>Flow_0mej3kd</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:serviceTask id="Activity_1edqasv" name="upd (Customer_Python_SDK)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
@@ -41,10 +40,8 @@
       <bpmn:incoming>Flow_0n8gwia</bpmn:incoming>
       <bpmn:outgoing>Flow_0l7xfmn</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:exclusiveGateway id="Gateway_13dmfsi" name="Gateway_13dmfsi" default="Flow_0gmo4qj">
+    <bpmn:exclusiveGateway id="Gateway_13dmfsi" name="Gateway_13dmfsi">
       <bpmn:incoming>Flow_0l7xfmn</bpmn:incoming>
-      <bpmn:outgoing>Flow_0gmo4qj</bpmn:outgoing>
-      <bpmn:outgoing>Flow_0mej3kd</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:serviceTask id="Activity_049zopm" name="upd (Customer_Python_SDK)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
@@ -76,34 +73,14 @@
           </camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0gmo4qj</bpmn:incoming>
       <bpmn:outgoing>Flow_1ulf5g3</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_0n8gwia" sourceRef="StartEvent_1" targetRef="Activity_1edqasv" />
     <bpmn:sequenceFlow id="Flow_0l7xfmn" sourceRef="Activity_1edqasv" targetRef="Gateway_13dmfsi" />
     <bpmn:sequenceFlow id="Flow_1ulf5g3" sourceRef="Activity_049zopm" targetRef="Event_0u3tycq" />
-    <bpmn:sequenceFlow id="Flow_0gmo4qj" sourceRef="Gateway_13dmfsi" targetRef="Activity_049zopm" />
-    <bpmn:sequenceFlow id="Flow_0mej3kd" name="upd (Customer_Python_SDK) == Failed" sourceRef="Gateway_13dmfsi" targetRef="Event_0u3tycq">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_049zopm).prop("status").value() == 'FAIL'}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_0mej3kd_di" bpmnElement="Flow_0mej3kd">
-        <di:waypoint x="550" y="125" />
-        <di:waypoint x="550" y="140" />
-        <di:waypoint x="630" y="290" />
-        <di:waypoint x="1053" y="146" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="545" y="197" width="90" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0gmo4qj_di" bpmnElement="Flow_0gmo4qj">
-        <di:waypoint x="575" y="100" />
-        <di:waypoint x="668" y="100" />
-        <di:waypoint x="668" y="130" />
-        <di:waypoint x="760" y="130" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ulf5g3_di" bpmnElement="Flow_1ulf5g3">
         <di:waypoint x="860" y="100" />
         <di:waypoint x="956" y="100" />
