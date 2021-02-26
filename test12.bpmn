@@ -17,7 +17,25 @@
       <bpmn:signalEventDefinition id="SignalEventDefinition_0p573ec" signalRef="Signal_0p573ec" />
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_13g8wc6" sourceRef="Activity_0elfppu" targetRef="Event_0emrt7t" />
-    <bpmn:serviceTask id="Activity_0elfppu" name="Helloworld" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:sequenceFlow id="Flow_0mq27j4" sourceRef="Event_0emrt7t" targetRef="Activity_1x3alqk" />
+    <bpmn:intermediateCatchEvent id="Event_0lex7sc" name="Event_0lex7sc">
+      <bpmn:incoming>Flow_0wyjht7</bpmn:incoming>
+      <bpmn:outgoing>Flow_151hazt</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_0sgqyfv" signalRef="Signal_0sgqyfv" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_0wyjht7" sourceRef="Activity_1x3alqk" targetRef="Event_0lex7sc" />
+    <bpmn:sequenceFlow id="Flow_151hazt" sourceRef="Event_0lex7sc" targetRef="Activity_0kg66w6" />
+    <bpmn:intermediateCatchEvent id="Event_1hvhi5k" name="Event_1hvhi5k">
+      <bpmn:incoming>Flow_1ngrid3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kff9oq</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1hksd27" signalRef="Signal_1hksd27" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1ngrid3" sourceRef="Activity_0kg66w6" targetRef="Event_1hvhi5k" />
+    <bpmn:endEvent id="Event_079rmyq" name="End Event">
+      <bpmn:incoming>Flow_1kff9oq</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1kff9oq" sourceRef="Event_1hvhi5k" targetRef="Event_079rmyq" />
+    <bpmn:serviceTask id="Activity_0elfppu" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -28,9 +46,12 @@
               <camunda:entry key="serviceName">
                 <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
               </camunda:entry>
-              <camunda:entry key="serviceInstanceId" />
-              <camunda:entry key="processName" />
-              <camunda:entry key="processType" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map />
               </camunda:entry>
@@ -42,8 +63,7 @@
       <bpmn:incoming>Flow_0k5gqye</bpmn:incoming>
       <bpmn:outgoing>Flow_13g8wc6</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_0mq27j4" sourceRef="Event_0emrt7t" targetRef="Activity_1x3alqk" />
-    <bpmn:serviceTask id="Activity_1x3alqk" name="Helloworld" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_1x3alqk" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -54,9 +74,12 @@
               <camunda:entry key="serviceName">
                 <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
               </camunda:entry>
-              <camunda:entry key="serviceInstanceId" />
-              <camunda:entry key="processName" />
-              <camunda:entry key="processType" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map />
               </camunda:entry>
@@ -68,14 +91,7 @@
       <bpmn:incoming>Flow_0mq27j4</bpmn:incoming>
       <bpmn:outgoing>Flow_0wyjht7</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:intermediateCatchEvent id="Event_0lex7sc" name="Event_0lex7sc">
-      <bpmn:incoming>Flow_0wyjht7</bpmn:incoming>
-      <bpmn:outgoing>Flow_151hazt</bpmn:outgoing>
-      <bpmn:signalEventDefinition id="SignalEventDefinition_0sgqyfv" signalRef="Signal_0sgqyfv" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:sequenceFlow id="Flow_0wyjht7" sourceRef="Activity_1x3alqk" targetRef="Event_0lex7sc" />
-    <bpmn:sequenceFlow id="Flow_151hazt" sourceRef="Event_0lex7sc" targetRef="Activity_0kg66w6" />
-    <bpmn:serviceTask id="Activity_0kg66w6" name="Helloworld" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_0kg66w6" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -86,9 +102,12 @@
               <camunda:entry key="serviceName">
                 <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
               </camunda:entry>
-              <camunda:entry key="serviceInstanceId" />
-              <camunda:entry key="processName" />
-              <camunda:entry key="processType" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map />
               </camunda:entry>
@@ -100,16 +119,6 @@
       <bpmn:incoming>Flow_151hazt</bpmn:incoming>
       <bpmn:outgoing>Flow_1ngrid3</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:intermediateCatchEvent id="Event_1hvhi5k" name="Event_1hvhi5k">
-      <bpmn:incoming>Flow_1ngrid3</bpmn:incoming>
-      <bpmn:outgoing>Flow_1kff9oq</bpmn:outgoing>
-      <bpmn:signalEventDefinition id="SignalEventDefinition_1hksd27" signalRef="Signal_1hksd27" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:sequenceFlow id="Flow_1ngrid3" sourceRef="Activity_0kg66w6" targetRef="Event_1hvhi5k" />
-    <bpmn:endEvent id="Event_079rmyq" name="End Event">
-      <bpmn:incoming>Flow_1kff9oq</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_1kff9oq" sourceRef="Event_1hvhi5k" targetRef="Event_079rmyq" />
   </bpmn:process>
   <bpmn:signal id="Signal_10biza9" name="Signal_10biza9" />
   <bpmn:signal id="Signal_0p573ec" name="Signal_0p573ec" />
@@ -118,29 +127,9 @@
   <bpmn:signal id="Signal_1hksd27" name="Signal_1hksd27" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_0m66paz_di" bpmnElement="Flow_0m66paz">
-        <di:waypoint x="209" y="120" />
-        <di:waypoint x="262" y="120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0k5gqye_di" bpmnElement="Flow_0k5gqye">
-        <di:waypoint x="298" y="120" />
-        <di:waypoint x="360" y="120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_13g8wc6_di" bpmnElement="Flow_13g8wc6">
-        <di:waypoint x="460" y="120" />
-        <di:waypoint x="522" y="120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0mq27j4_di" bpmnElement="Flow_0mq27j4">
-        <di:waypoint x="558" y="120" />
-        <di:waypoint x="620" y="120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0wyjht7_di" bpmnElement="Flow_0wyjht7">
-        <di:waypoint x="720" y="120" />
-        <di:waypoint x="782" y="120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_151hazt_di" bpmnElement="Flow_151hazt">
-        <di:waypoint x="818" y="120" />
-        <di:waypoint x="880" y="120" />
+      <bpmndi:BPMNEdge id="Flow_1kff9oq_di" bpmnElement="Flow_1kff9oq">
+        <di:waypoint x="1078" y="230" />
+        <di:waypoint x="1142" y="230" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ngrid3_di" bpmnElement="Flow_1ngrid3">
         <di:waypoint x="980" y="120" />
@@ -148,9 +137,29 @@
         <di:waypoint x="1010" y="230" />
         <di:waypoint x="1042" y="230" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1kff9oq_di" bpmnElement="Flow_1kff9oq">
-        <di:waypoint x="1078" y="230" />
-        <di:waypoint x="1142" y="230" />
+      <bpmndi:BPMNEdge id="Flow_151hazt_di" bpmnElement="Flow_151hazt">
+        <di:waypoint x="818" y="120" />
+        <di:waypoint x="880" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wyjht7_di" bpmnElement="Flow_0wyjht7">
+        <di:waypoint x="720" y="120" />
+        <di:waypoint x="782" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mq27j4_di" bpmnElement="Flow_0mq27j4">
+        <di:waypoint x="558" y="120" />
+        <di:waypoint x="620" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13g8wc6_di" bpmnElement="Flow_13g8wc6">
+        <di:waypoint x="460" y="120" />
+        <di:waypoint x="522" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0k5gqye_di" bpmnElement="Flow_0k5gqye">
+        <di:waypoint x="298" y="120" />
+        <di:waypoint x="360" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0m66paz_di" bpmnElement="Flow_0m66paz">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="262" y="120" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="173" y="102" width="36" height="36" />
@@ -170,20 +179,11 @@
           <dc:Bounds x="502" y="145" width="77" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1614348237181_di" bpmnElement="Activity_0elfppu">
-        <dc:Bounds x="360" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1614348247418_di" bpmnElement="Activity_1x3alqk">
-        <dc:Bounds x="620" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0lex7sc_di" bpmnElement="Event_0lex7sc">
         <dc:Bounds x="782" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="763" y="145" width="75" height="14" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1614348254708_di" bpmnElement="Activity_0kg66w6">
-        <dc:Bounds x="880" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1hvhi5k_di" bpmnElement="Event_1hvhi5k">
         <dc:Bounds x="1042" y="212" width="36" height="36" />
@@ -196,6 +196,15 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1135" y="255" width="51" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1614348512463_di" bpmnElement="Activity_0elfppu">
+        <dc:Bounds x="360" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1614348518204_di" bpmnElement="Activity_1x3alqk">
+        <dc:Bounds x="620" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1614348521532_di" bpmnElement="Activity_0kg66w6">
+        <dc:Bounds x="880" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
