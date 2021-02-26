@@ -83,7 +83,9 @@
     <bpmn:sequenceFlow id="Flow_0l7xfmn" sourceRef="Activity_1edqasv" targetRef="Gateway_13dmfsi" />
     <bpmn:sequenceFlow id="Flow_1ulf5g3" sourceRef="Activity_049zopm" targetRef="Event_0u3tycq" />
     <bpmn:sequenceFlow id="Flow_0lk7h3b" sourceRef="Gateway_13dmfsi" targetRef="Activity_049zopm" />
-    <bpmn:sequenceFlow id="Flow_1xhgegm" sourceRef="Gateway_13dmfsi" targetRef="Event_0u3tycq" />
+    <bpmn:sequenceFlow id="Flow_1xhgegm" name="upd (Customer_Python_SDK) != Failed" sourceRef="Gateway_13dmfsi" targetRef="Event_0u3tycq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_1edqasv).prop("status").value() != 'FAIL'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
@@ -92,6 +94,9 @@
         <di:waypoint x="550" y="290" />
         <di:waypoint x="1070" y="290" />
         <di:waypoint x="1070" y="158" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="765" y="272" width="90" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0lk7h3b_di" bpmnElement="Flow_0lk7h3b">
         <di:waypoint x="575" y="100" />
