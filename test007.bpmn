@@ -13,7 +13,7 @@
       <bpmn:incoming>Flow_0obng1r</bpmn:incoming>
       <bpmn:incoming>Flow_0cxjke9</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Activity_1ao3fma" name="Process#1 (TestWorkflowWFZ)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_1ao3fma" name="Process#2(TestWorkflowWFZ)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -73,7 +73,7 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0jhjnyg" sourceRef="Gateway_03s9h52" targetRef="Activity_1f1zv5d" />
     <bpmn:sequenceFlow id="Flow_0cxjke9" sourceRef="Activity_1f1zv5d" targetRef="Event_1i1ilhz" />
-    <bpmn:serviceTask id="Activity_1f1zv5d" name="Process#1 (TestWorkflowWFZ)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_1f1zv5d" name="Process#3 (TestWorkflowWFZ)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
