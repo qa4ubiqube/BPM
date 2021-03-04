@@ -69,7 +69,7 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1up5tnt" sourceRef="Event_1larwwn" targetRef="Gateway_03s9h52" />
     <bpmn:sequenceFlow id="Flow_1f6lq77" name="Process#1 (TestWorkflowWFZ) == Failed" sourceRef="Gateway_03s9h52" targetRef="Activity_1ao3fma">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_1ao3fma).prop("status").value() == 'FAIL'}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${JSON(Activity_0697dtt).prop("status").value() == 'FAIL'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0jhjnyg" sourceRef="Gateway_03s9h52" targetRef="Activity_1f1zv5d" />
     <bpmn:sequenceFlow id="Flow_0cxjke9" sourceRef="Activity_1f1zv5d" targetRef="Event_1i1ilhz" />
