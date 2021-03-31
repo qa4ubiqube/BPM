@@ -43,9 +43,7 @@
               <camunda:entry key="serviceName">
                 <camunda:value>Process/workflows/just_sleep_2_/just_sleep_2_</camunda:value>
               </camunda:entry>
-              <camunda:entry key="serviceInstanceId">
-                <camunda:value>122802</camunda:value>
-              </camunda:entry>
+              <camunda:entry key="serviceInstanceId" />
               <camunda:entry key="processName">
                 <camunda:value>Process/workflows/just_sleep_2_/Process_Update_sleep</camunda:value>
               </camunda:entry>
@@ -53,35 +51,7 @@
                 <camunda:value>UPDATE</camunda:value>
               </camunda:entry>
               <camunda:entry key="processVariables">
-                <camunda:map>
-                  <camunda:entry key="SERVICEINSTANCEREFERENCE">
-                    <camunda:value>CPESID122802</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="sleep">
-                    <camunda:value>5</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="TASKID">
-                    <camunda:value>2</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="PROCESSINSTANCEID">
-                    <camunda:value>146247</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="TASKINSTANCEID">
-                    <camunda:value>149362</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="service_id">
-                    <camunda:value>122802</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="EXECNUMBER">
-                    <camunda:value>1</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="UBIQUBEID">
-                    <camunda:value>CPEA992</camunda:value>
-                  </camunda:entry>
-                  <camunda:entry key="SERVICEINSTANCEID">
-                    <camunda:value>122802</camunda:value>
-                  </camunda:entry>
-                </camunda:map>
+                <camunda:map />
               </camunda:entry>
               <camunda:entry key="resumeOnFail">
                 <camunda:value>false</camunda:value>
@@ -129,7 +99,7 @@
       <bpmndi:BPMNShape id="ServiceTask_1617182842141_di" bpmnElement="Activity_0hmyp0x">
         <dc:Bounds x="410" y="100" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1617182972027_di" bpmnElement="Activity_02suql5">
+      <bpmndi:BPMNShape id="ServiceTask_1617183017298_di" bpmnElement="Activity_02suql5">
         <dc:Bounds x="850" y="110" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
