@@ -10,21 +10,33 @@
       <bpmn:incoming>Flow_188w819</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_188w819" sourceRef="Activity_02suql5" targetRef="Event_05b3e7u" />
-    <bpmn:serviceTask id="Activity_0hmyp0x" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_0hmyp0x" name="sleep (just_sleep_2_)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
             <camunda:map>
-              <camunda:entry key="ubiqubeId">PLACEHOLDER_UBIQUBE_ID</camunda:entry>
-              <camunda:entry key="serviceName">Process/Tutorials/Helloworld/Helloworld</camunda:entry>
-              <camunda:entry key="processName">Process/Helloworld/Process_create_instance</camunda:entry>
-              <camunda:entry key="processType">CREATE</camunda:entry>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/workflows/just_sleep_2_/just_sleep_2_</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processName">
+                <camunda:value>Process/workflows/just_sleep_2_/Process_sleep</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map>
-                  <camunda:entry key="name">blaa</camunda:entry>
+                  <camunda:entry key="sleep">
+                    <camunda:value>5</camunda:value>
+                  </camunda:entry>
                 </camunda:map>
               </camunda:entry>
-              <camunda:entry key="resumeOnFail">false</camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>false</camunda:value>
+              </camunda:entry>
             </camunda:map>
           </camunda:inputParameter>
         </camunda:inputOutput>
@@ -96,10 +108,10 @@
           <dc:Bounds x="1285" y="165" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1617182842141_di" bpmnElement="Activity_0hmyp0x">
+      <bpmndi:BPMNShape id="ServiceTask_1617183118171_di" bpmnElement="Activity_0hmyp0x">
         <dc:Bounds x="410" y="100" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1617183017298_di" bpmnElement="Activity_02suql5">
+      <bpmndi:BPMNShape id="ServiceTask_1617183121449_di" bpmnElement="Activity_02suql5">
         <dc:Bounds x="850" y="110" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
