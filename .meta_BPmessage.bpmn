@@ -3,11 +3,11 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>BPmessage</value>
+            <value>BPmessage.bpmn</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1623683238061</value>
+            <value>1623687748774</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -15,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1623683238057</value>
+            <value>1623687748770</value>
         </entry>
         <entry>
             <key>TAG</key>
