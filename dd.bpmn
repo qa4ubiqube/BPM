@@ -9,7 +9,7 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_18qfard" sourceRef="StartEvent_1" targetRef="Activity_1iva9kd" />
     <bpmn:sequenceFlow id="Flow_1v49vtb" sourceRef="Activity_1iva9kd" targetRef="Event_0kkfez8" />
-    <bpmn:serviceTask id="Activity_1iva9kd" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:serviceTask id="Activity_1iva9kd" name="Create (Topology)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -18,22 +18,23 @@
                 <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
               </camunda:entry>
               <camunda:entry key="serviceName">
-                <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
+                <camunda:value>Process/Topology/Topology</camunda:value>
               </camunda:entry>
               <camunda:entry key="processName">
-                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
+                <camunda:value>Process/Topology/Process_Create_View</camunda:value>
               </camunda:entry>
               <camunda:entry key="processType">
                 <camunda:value>CREATE</camunda:value>
               </camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map>
-                  <camunda:entry key="ipv6">
-                    <camunda:value>fe80::bb38:9f98:241:8a95</camunda:value>
+                  <camunda:entry key="view_name">
+                    <camunda:value>L3</camunda:value>
                   </camunda:entry>
-                  <camunda:entry key="ipMask">
-                    <camunda:value>255.255.0.0</camunda:value>
+                  <camunda:entry key="view_type">
+                    <camunda:value>SNMP</camunda:value>
                   </camunda:entry>
+                  <camunda:entry key="ipam_device_id" />
                 </camunda:map>
               </camunda:entry>
               <camunda:entry key="resumeOnFail">
@@ -71,7 +72,7 @@
           <dc:Bounds x="584" y="165" width="52" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1625093395754_di" bpmnElement="Activity_1iva9kd">
+      <bpmndi:BPMNShape id="ServiceTask_1625093477444_di" bpmnElement="Activity_1iva9kd">
         <dc:Bounds x="320" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
