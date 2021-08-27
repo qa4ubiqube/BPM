@@ -32,31 +32,110 @@
     <bpmn:sequenceFlow id="Flow_1ucvqwa" sourceRef="Event_0huqtif" targetRef="Activity_1rmf7g7" />
     <bpmn:intermediateCatchEvent id="Event_1xb14j7" name="Event_1xb14j7">
       <bpmn:incoming>Flow_1amwlvd</bpmn:incoming>
-      <bpmn:outgoing>Flow_03vsfd1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0f50ood</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_18gbgt5" messageRef="Message_18gbgt5" />
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_1amwlvd" sourceRef="Activity_1rmf7g7" targetRef="Event_1xb14j7" />
     <bpmn:endEvent id="Event_1022rfi" name="End Event">
-      <bpmn:incoming>Flow_03vsfd1</bpmn:incoming>
+      <bpmn:incoming>Flow_0q85koh</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_03vsfd1" sourceRef="Event_1xb14j7" targetRef="Event_1022rfi" />
+    <bpmn:serviceTask id="Activity_0t9krot" name="New service (Public Cloud VNF Management)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/Public_Cloud/AWS/Instance_Management/Manage_VNF_on_AWS</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processName">
+                <camunda:value>Process/Public_Cloud/AWS/Process_New_service</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:map>
+                  <camunda:entry key="AwsDeviceId" />
+                  <camunda:entry key="deviceId" />
+                  <camunda:entry key="ImageId" />
+                  <camunda:entry key="InstanceType">
+                    <camunda:value>t2.small</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="security_group">
+                    <camunda:value>sg-032da9f74527acf71 </camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="InstanceId" />
+                  <camunda:entry key="SubnetId">
+                    <camunda:value>subnet-a7e3edcf</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="managed_device_name" />
+                  <camunda:entry key="KeyName" />
+                  <camunda:entry key="manufacturer_id">
+                    <camunda:value>14020601</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="model_id">
+                    <camunda:value>14020601</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="device_ip_address" />
+                  <camunda:entry key="login">
+                    <camunda:value>centos</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="password" />
+                  <camunda:entry key="new_password">
+                    <camunda:value>Ubiqube2021</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="customer_id" />
+                  <camunda:entry key="snmp_community">
+                    <camunda:value>ubiqube</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="force">
+                    <camunda:value>false</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="conf_profile_reference">
+                    <camunda:value>LINUX_FW</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="mon_profile_reference" />
+                  <camunda:entry key="service_id" />
+                </camunda:map>
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>true</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0f50ood</bpmn:incoming>
+      <bpmn:outgoing>Flow_0q85koh</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0f50ood" sourceRef="Event_1xb14j7" targetRef="Activity_0t9krot" />
+    <bpmn:sequenceFlow id="Flow_0q85koh" sourceRef="Activity_0t9krot" targetRef="Event_1022rfi" />
   </bpmn:process>
   <bpmn:message id="Message_18gbgt5" name="Message_18gbgt5" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_1ucvqwa_di" bpmnElement="Flow_1ucvqwa">
-        <di:waypoint x="138" y="120" />
-        <di:waypoint x="260" y="120" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1amwlvd_di" bpmnElement="Flow_1amwlvd">
         <di:waypoint x="360" y="120" />
         <di:waypoint x="512" y="120" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_03vsfd1_di" bpmnElement="Flow_03vsfd1">
+      <bpmndi:BPMNEdge id="Flow_1ucvqwa_di" bpmnElement="Flow_1ucvqwa">
+        <di:waypoint x="138" y="120" />
+        <di:waypoint x="260" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0f50ood_di" bpmnElement="Flow_0f50ood">
         <di:waypoint x="548" y="120" />
-        <di:waypoint x="660" y="120" />
-        <di:waypoint x="660" y="130" />
-        <di:waypoint x="772" y="130" />
+        <di:waypoint x="614" y="120" />
+        <di:waypoint x="614" y="140" />
+        <di:waypoint x="680" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0q85koh_di" bpmnElement="Flow_0q85koh">
+        <di:waypoint x="780" y="140" />
+        <di:waypoint x="846" y="140" />
+        <di:waypoint x="846" y="120" />
+        <di:waypoint x="912" y="120" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1630051934134_di" bpmnElement="Activity_1rmf7g7">
         <dc:Bounds x="260" y="80" width="100" height="80" />
@@ -74,10 +153,13 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1022rfi_di" bpmnElement="Event_1022rfi">
-        <dc:Bounds x="772" y="112" width="36" height="36" />
+        <dc:Bounds x="912" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="765" y="155" width="51" height="14" />
+          <dc:Bounds x="905" y="145" width="51" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1630052350699_di" bpmnElement="Activity_0t9krot">
+        <dc:Bounds x="680" y="100" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
