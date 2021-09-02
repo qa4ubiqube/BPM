@@ -13,7 +13,6 @@
     <bpmn:sequenceFlow id="Flow_01zkeei" sourceRef="Event_02h856c" targetRef="Activity_0etno7u" />
     <bpmn:endEvent id="Event_14p5uy6" name="End Event">
       <bpmn:incoming>Flow_1suy6uy</bpmn:incoming>
-      <bpmn:incoming>Flow_13rlyh1</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1suy6uy" sourceRef="Activity_0etno7u" targetRef="Event_14p5uy6" />
     <bpmn:serviceTask id="Activity_03l2ms8" name="create_sleep (just_sleep_2)" camunda:type="external" camunda:topic="msa_workflow">
@@ -68,7 +67,6 @@
     <bpmn:sequenceFlow id="Flow_0255v6e" sourceRef="StartEvent_1" targetRef="Gateway_0k05hix" />
     <bpmn:sequenceFlow id="Flow_1rchkx8" sourceRef="Gateway_0k05hix" targetRef="Activity_03l2ms8" />
     <bpmn:sequenceFlow id="Flow_0ciq7dd" sourceRef="Gateway_0k05hix" targetRef="Activity_0kehkcm" />
-    <bpmn:sequenceFlow id="Flow_13rlyh1" sourceRef="Activity_0kehkcm" targetRef="Event_14p5uy6" />
     <bpmn:sequenceFlow id="Flow_0dbq5k0" sourceRef="Gateway_0k05hix" targetRef="Activity_1tjb3nb" />
     <bpmn:intermediateCatchEvent id="Event_0vrlk4e" name="Event_0vrlk4e">
       <bpmn:incoming>Flow_13e4gc4</bpmn:incoming>
@@ -108,62 +106,38 @@
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
             <camunda:map>
-              <camunda:entry key="ubiqubeId">
-                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="serviceName">
-                <camunda:value>Process/workflows/just_sleep_2/just_sleep_2</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="processName">
-                <camunda:value>Process/workflows/just_sleep_2/Process_create_sleep</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="processType">
-                <camunda:value>CREATE</camunda:value>
-              </camunda:entry>
+              <camunda:entry key="ubiqubeId">PLACEHOLDER_UBIQUBE_ID</camunda:entry>
+              <camunda:entry key="serviceName">Process/workflows/just_sleep_2/just_sleep_2</camunda:entry>
+              <camunda:entry key="processName">Process/workflows/just_sleep_2/Process_create_sleep</camunda:entry>
+              <camunda:entry key="processType">CREATE</camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map>
-                  <camunda:entry key="sleep">
-                    <camunda:value>5</camunda:value>
-                  </camunda:entry>
+                  <camunda:entry key="sleep">5</camunda:entry>
                 </camunda:map>
               </camunda:entry>
-              <camunda:entry key="resumeOnFail">
-                <camunda:value>false</camunda:value>
-              </camunda:entry>
+              <camunda:entry key="resumeOnFail">false</camunda:entry>
             </camunda:map>
           </camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0ciq7dd</bpmn:incoming>
-      <bpmn:outgoing>Flow_13rlyh1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1r4p3l7</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:serviceTask id="Activity_1tjb3nb" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
             <camunda:map>
-              <camunda:entry key="ubiqubeId">
-                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="serviceName">
-                <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="processName">
-                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
-              </camunda:entry>
-              <camunda:entry key="processType">
-                <camunda:value>CREATE</camunda:value>
-              </camunda:entry>
+              <camunda:entry key="ubiqubeId">PLACEHOLDER_UBIQUBE_ID</camunda:entry>
+              <camunda:entry key="serviceName">Process/Tutorials/Helloworld/Helloworld</camunda:entry>
+              <camunda:entry key="processName">Process/Helloworld/Process_create_instance</camunda:entry>
+              <camunda:entry key="processType">CREATE</camunda:entry>
               <camunda:entry key="processVariables">
                 <camunda:map>
-                  <camunda:entry key="name">
-                    <camunda:value>lllll</camunda:value>
-                  </camunda:entry>
+                  <camunda:entry key="name">lllll</camunda:entry>
                 </camunda:map>
               </camunda:entry>
-              <camunda:entry key="resumeOnFail">
-                <camunda:value>false</camunda:value>
-              </camunda:entry>
+              <camunda:entry key="resumeOnFail">false</camunda:entry>
             </camunda:map>
           </camunda:inputParameter>
         </camunda:inputOutput>
@@ -171,6 +145,10 @@
       <bpmn:incoming>Flow_0dbq5k0</bpmn:incoming>
       <bpmn:outgoing>Flow_13e4gc4</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1v3p8vv" name="End Event">
+      <bpmn:incoming>Flow_1r4p3l7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1r4p3l7" sourceRef="Activity_0kehkcm" targetRef="Event_1v3p8vv" />
   </bpmn:process>
   <bpmn:signal id="Signal_0usvx2r" name="Signal_0usvx2r" />
   <bpmn:signal id="Signal_0jg8ebi" name="Signal_0jg8ebi" />
@@ -192,13 +170,6 @@
         <di:waypoint x="200" y="145" />
         <di:waypoint x="200" y="340" />
         <di:waypoint x="280" y="340" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_13rlyh1_di" bpmnElement="Flow_13rlyh1">
-        <di:waypoint x="380" y="230" />
-        <di:waypoint x="516" y="230" />
-        <di:waypoint x="660" y="210" />
-        <di:waypoint x="660" y="180" />
-        <di:waypoint x="671" y="138" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ciq7dd_di" bpmnElement="Flow_0ciq7dd">
         <di:waypoint x="200" y="145" />
@@ -225,6 +196,10 @@
       <bpmndi:BPMNEdge id="Flow_1wenpnj_di" bpmnElement="Flow_1wenpnj">
         <di:waypoint x="380" y="120" />
         <di:waypoint x="412" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1r4p3l7_di" bpmnElement="Flow_1r4p3l7">
+        <di:waypoint x="380" y="230" />
+        <di:waypoint x="442" y="230" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="112" y="102" width="36" height="36" />
@@ -276,6 +251,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1630577554355_di" bpmnElement="Activity_1tjb3nb">
         <dc:Bounds x="280" y="300" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1v3p8vv_di" bpmnElement="Event_1v3p8vv">
+        <dc:Bounds x="442" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="435" y="255" width="51" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
