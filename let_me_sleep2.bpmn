@@ -59,7 +59,11 @@
                 <camunda:value>UPDATE</camunda:value>
               </camunda:entry>
               <camunda:entry key="processVariables">
-                <camunda:map />
+                <camunda:map>
+                  <camunda:entry key="sleep">
+                    <camunda:value>8</camunda:value>
+                  </camunda:entry>
+                </camunda:map>
               </camunda:entry>
               <camunda:entry key="resumeOnFail">
                 <camunda:value>false</camunda:value>
@@ -112,7 +116,7 @@
       <bpmndi:BPMNShape id="ServiceTask_1630575642433_di" bpmnElement="Activity_03l2ms8">
         <dc:Bounds x="260" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1630575776152_di" bpmnElement="Activity_0etno7u">
+      <bpmndi:BPMNShape id="ServiceTask_1630575951664_di" bpmnElement="Activity_0etno7u">
         <dc:Bounds x="500" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
