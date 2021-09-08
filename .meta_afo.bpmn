@@ -3,11 +3,11 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>afo</value>
+            <value>afo.bpmn</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1631104210990</value>
+            <value>1631104280102</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -15,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1631104210984</value>
+            <value>1631104280096</value>
         </entry>
         <entry>
             <key>TAG</key>
