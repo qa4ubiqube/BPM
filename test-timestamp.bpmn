@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="PLACEHOLDER_PROCESS_ID" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Start Event">
+      <bpmn:outgoing>Flow_13oo9cb</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_13oo9cb" sourceRef="StartEvent_1" targetRef="Activity_084h1vh" />
+    <bpmn:serviceTask id="Activity_084h1vh" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_create_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:map>
+                  <camunda:entry key="name" />
+                </camunda:map>
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>true</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_13oo9cb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0v1zstt</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_0xsa3ls" name="pause1">
+      <bpmn:incoming>Flow_0v1zstt</bpmn:incoming>
+      <bpmn:outgoing>Flow_0mqy84i</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1nh7lxy" signalRef="Signal_1nh7lxy" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_0v1zstt" sourceRef="Activity_084h1vh" targetRef="Event_0xsa3ls" />
+    <bpmn:sequenceFlow id="Flow_0mqy84i" sourceRef="Event_0xsa3ls" targetRef="Activity_1lxuuvg" />
+    <bpmn:serviceTask id="Activity_1lxuuvg" name="update Name (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceInstanceId" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Tutorials/Helloworld/Process_update_Name</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>UPDATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:map />
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>false</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0mqy84i</bpmn:incoming>
+      <bpmn:outgoing>Flow_1cxafot</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_1aqabcd" name="pause2">
+      <bpmn:incoming>Flow_1cxafot</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yuak9c</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_0itwc7h" signalRef="Signal_0itwc7h" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1cxafot" sourceRef="Activity_1lxuuvg" targetRef="Event_1aqabcd" />
+    <bpmn:sequenceFlow id="Flow_0yuak9c" sourceRef="Event_1aqabcd" targetRef="Activity_1cfx70u" />
+    <bpmn:serviceTask id="Activity_1cfx70u" name="delete instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceInstanceId" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/Helloworld/Process_delete_instance</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>DELETE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:map />
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>false</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0yuak9c</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tw1fat</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1frkoiw" name="End Event">
+      <bpmn:incoming>Flow_0tw1fat</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0tw1fat" sourceRef="Activity_1cfx70u" targetRef="Event_1frkoiw" />
+  </bpmn:process>
+  <bpmn:signal id="Signal_1nh7lxy" name="Signal_1nh7lxy" />
+  <bpmn:signal id="Signal_0itwc7h" name="Signal_0itwc7h" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
+      <bpmndi:BPMNEdge id="Flow_13oo9cb_di" bpmnElement="Flow_13oo9cb">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="260" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0v1zstt_di" bpmnElement="Flow_0v1zstt">
+        <di:waypoint x="360" y="120" />
+        <di:waypoint x="412" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mqy84i_di" bpmnElement="Flow_0mqy84i">
+        <di:waypoint x="448" y="120" />
+        <di:waypoint x="500" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cxafot_di" bpmnElement="Flow_1cxafot">
+        <di:waypoint x="600" y="120" />
+        <di:waypoint x="652" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yuak9c_di" bpmnElement="Flow_0yuak9c">
+        <di:waypoint x="688" y="120" />
+        <di:waypoint x="740" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tw1fat_di" bpmnElement="Flow_0tw1fat">
+        <di:waypoint x="840" y="120" />
+        <di:waypoint x="892" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="162.5" y="145" width="55" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1632754838798_di" bpmnElement="Activity_084h1vh">
+        <dc:Bounds x="260" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0xsa3ls_di" bpmnElement="Event_0xsa3ls">
+        <dc:Bounds x="412" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="413" y="145" width="35" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1632754915400_di" bpmnElement="Activity_1lxuuvg">
+        <dc:Bounds x="500" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1aqabcd_di" bpmnElement="Event_1aqabcd">
+        <dc:Bounds x="652" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="652" y="145" width="37" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1632754953214_di" bpmnElement="Activity_1cfx70u">
+        <dc:Bounds x="740" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1frkoiw_di" bpmnElement="Event_1frkoiw">
+        <dc:Bounds x="892" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="884" y="145" width="52" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
