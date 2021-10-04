@@ -3,19 +3,23 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>NTL_dummyBPM</value>
+            <value>SampleTestWF.xml</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1631886081921</value>
+            <value>1607573018056</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
-            <value>Bpmn</value>
+            <value>Process</value>
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1631886081821</value>
+            <value>1607573018033</value>
+        </entry>
+        <entry>
+            <key>MODEL</key>
+            <value>0</value>
         </entry>
         <entry>
             <key>TAG</key>
@@ -25,8 +29,12 @@
             <value>text</value>
         </entry>
         <entry>
+            <key>MANUFACTURER</key>
+            <value>0</value>
+        </entry>
+        <entry>
             <key>TYPE</key>
-            <value>UPLOAD</value>
+            <value>FILE</value>
         </entry>
         <entry>
             <key>COMMENT</key>
