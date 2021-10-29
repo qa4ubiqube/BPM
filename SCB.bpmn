@@ -49,7 +49,9 @@
               <camunda:entry key="serviceName">
                 <camunda:value>Process/Tutorials/Helloworld/Helloworld</camunda:value>
               </camunda:entry>
-              <camunda:entry key="serviceInstanceId" />
+              <camunda:entry key="serviceInstanceId">
+                <camunda:value>2493</camunda:value>
+              </camunda:entry>
               <camunda:entry key="processName">
                 <camunda:value>Process/Helloworld/Process_print_message</camunda:value>
               </camunda:entry>
@@ -110,7 +112,7 @@
           <dc:Bounds x="645" y="145" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1635498132893_di" bpmnElement="Activity_1vp5gt3">
+      <bpmndi:BPMNShape id="ServiceTask_1635498221035_di" bpmnElement="Activity_1vp5gt3">
         <dc:Bounds x="500" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
