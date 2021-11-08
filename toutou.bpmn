@@ -5,6 +5,10 @@
       <bpmn:outgoing>Flow_0zwfraz</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0zwfraz" sourceRef="StartEvent_1" targetRef="Activity_0a0q0wc" />
+    <bpmn:endEvent id="Event_1iyqi5n" name="End Event">
+      <bpmn:incoming>Flow_1yqs9ws</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1yqs9ws" sourceRef="Activity_0a0q0wc" targetRef="Event_1iyqi5n" />
     <bpmn:serviceTask id="Activity_0a0q0wc" name="print message (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
@@ -38,20 +42,16 @@
       <bpmn:incoming>Flow_0zwfraz</bpmn:incoming>
       <bpmn:outgoing>Flow_1yqs9ws</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="Event_1iyqi5n" name="End Event">
-      <bpmn:incoming>Flow_1yqs9ws</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_1yqs9ws" sourceRef="Activity_0a0q0wc" targetRef="Event_1iyqi5n" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_0zwfraz_di" bpmnElement="Flow_0zwfraz">
-        <di:waypoint x="238" y="260" />
-        <di:waypoint x="480" y="260" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1yqs9ws_di" bpmnElement="Flow_1yqs9ws">
         <di:waypoint x="580" y="260" />
         <di:waypoint x="822" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zwfraz_di" bpmnElement="Flow_0zwfraz">
+        <di:waypoint x="238" y="260" />
+        <di:waypoint x="480" y="260" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="202" y="242" width="36" height="36" />
@@ -59,14 +59,14 @@
           <dc:Bounds x="191" y="285" width="56" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1636379757345_di" bpmnElement="Activity_0a0q0wc">
-        <dc:Bounds x="480" y="220" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1iyqi5n_di" bpmnElement="Event_1iyqi5n">
         <dc:Bounds x="822" y="242" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="815" y="285" width="51" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1636379888864_di" bpmnElement="Activity_0a0q0wc">
+        <dc:Bounds x="480" y="220" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
