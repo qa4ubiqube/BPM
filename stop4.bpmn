@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="PLACEHOLDER_PROCESS_ID" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Start Event">
+      <bpmn:outgoing>Flow_1yq7795</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:intermediateCatchEvent id="Event_0yky69t" name="Event_0yky69t">
+      <bpmn:incoming>Flow_1yq7795</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zcstpb</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_06hr372" signalRef="Signal_06hr372" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1yq7795" sourceRef="StartEvent_1" targetRef="Event_0yky69t" />
+    <bpmn:intermediateCatchEvent id="Event_0h2mok8" name="Event_0h2mok8">
+      <bpmn:incoming>Flow_0zcstpb</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rvzyio</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_06ml4oo" signalRef="Signal_06ml4oo" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_0zcstpb" sourceRef="Event_0yky69t" targetRef="Event_0h2mok8" />
+    <bpmn:intermediateCatchEvent id="Event_0xhu82d" name="Event_0xhu82d">
+      <bpmn:incoming>Flow_1rvzyio</bpmn:incoming>
+      <bpmn:outgoing>Flow_0choh2x</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_09zh1to" signalRef="Signal_09zh1to" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1rvzyio" sourceRef="Event_0h2mok8" targetRef="Event_0xhu82d" />
+    <bpmn:endEvent id="Event_1t58y4d" name="End Event">
+      <bpmn:incoming>Flow_0choh2x</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0choh2x" sourceRef="Event_0xhu82d" targetRef="Event_1t58y4d" />
+  </bpmn:process>
+  <bpmn:signal id="Signal_06hr372" name="Signal_06hr372" />
+  <bpmn:signal id="Signal_06ml4oo" name="Signal_06ml4oo" />
+  <bpmn:signal id="Signal_09zh1to" name="Signal_09zh1to" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
+      <bpmndi:BPMNEdge id="Flow_1yq7795_di" bpmnElement="Flow_1yq7795">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="262" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zcstpb_di" bpmnElement="Flow_0zcstpb">
+        <di:waypoint x="298" y="120" />
+        <di:waypoint x="352" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rvzyio_di" bpmnElement="Flow_1rvzyio">
+        <di:waypoint x="388" y="120" />
+        <di:waypoint x="442" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0choh2x_di" bpmnElement="Flow_0choh2x">
+        <di:waypoint x="478" y="120" />
+        <di:waypoint x="532" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="162.5" y="145" width="55" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0yky69t_di" bpmnElement="Event_0yky69t">
+        <dc:Bounds x="262" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="241" y="145" width="78" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0h2mok8_di" bpmnElement="Event_0h2mok8">
+        <dc:Bounds x="352" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="328" y="145" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0xhu82d_di" bpmnElement="Event_0xhu82d">
+        <dc:Bounds x="442" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="419" y="145" width="82" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1t58y4d_di" bpmnElement="Event_1t58y4d">
+        <dc:Bounds x="532" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="525" y="145" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
