@@ -3,11 +3,11 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>bpmQAtoDelete</value>
+            <value>NewDisplayedName</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1641367581260</value>
+            <value>1641367581694</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -15,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1641367581242</value>
+            <value>1641367581677</value>
         </entry>
         <entry>
             <key>TAG</key>
