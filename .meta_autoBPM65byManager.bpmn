@@ -3,11 +3,11 @@
     <map>
         <entry>
             <key>DISPLAYNAME</key>
-            <value>autoBPM65byManager</value>
+            <value>auto_BPMUpd</value>
         </entry>
         <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1672050010657</value>
+            <value>1672050556117</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -15,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1672050010647</value>
+            <value>1672050556113</value>
         </entry>
         <entry>
             <key>TAG</key>
