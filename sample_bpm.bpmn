@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="PLACEHOLDER_PROCESS_ID" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Start Event">
+      <bpmn:outgoing>Flow_08k6kag</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_08k6kag" sourceRef="StartEvent_1" targetRef="Activity_04j5kr9" />
+    <bpmn:serviceTask id="Activity_04j5kr9" name="pass_create (test_return_value)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/workflows/test_return_value/test_return_value</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processName">
+                <camunda:value>Process/workflows/test_return_value/Process_pass_create</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>CREATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:map>
+                  <camunda:entry key="var_name">
+                    <camunda:value>var1</camunda:value>
+                  </camunda:entry>
+                  <camunda:entry key="var_name2">
+                    <camunda:value>2</camunda:value>
+                  </camunda:entry>
+                </camunda:map>
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>false</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processExecutor">
+                <camunda:value>PLACEHOLDER_EXECUTOR_ID</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_08k6kag</bpmn:incoming>
+      <bpmn:outgoing>Flow_13dfk4q</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_0spbdaj" name="Event_0spbdaj">
+      <bpmn:incoming>Flow_13dfk4q</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yphbgt</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1eoribz" signalRef="Signal_1eoribz" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_13dfk4q" sourceRef="Activity_04j5kr9" targetRef="Event_0spbdaj" />
+    <bpmn:sequenceFlow id="Flow_0yphbgt" sourceRef="Event_0spbdaj" targetRef="Activity_0rhvfwh" />
+    <bpmn:serviceTask id="Activity_0rhvfwh" name="pass_update (test_return_value)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/workflows/test_return_value/test_return_value</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceInstanceId" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/workflows/test_return_value/Process_pass_update</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>UPDATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:value>${JSON(Activity_04j5kr9).prop("variables").toString()}</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>false</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processExecutor">
+                <camunda:value>PLACEHOLDER_EXECUTOR_ID</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0yphbgt</bpmn:incoming>
+      <bpmn:outgoing>Flow_1jont9a</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_19neqrx" name="Event_19neqrx">
+      <bpmn:incoming>Flow_1jont9a</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ex87t7</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_05t9s7q" signalRef="Signal_05t9s7q" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1jont9a" sourceRef="Activity_0rhvfwh" targetRef="Event_19neqrx" />
+    <bpmn:sequenceFlow id="Flow_0ex87t7" sourceRef="Event_19neqrx" targetRef="Activity_0u45ukv" />
+    <bpmn:serviceTask id="Activity_0u45ukv" name="not_pass_update (test_return_value)" camunda:type="external" camunda:topic="msa_workflow">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="workflow_data">
+            <camunda:map>
+              <camunda:entry key="ubiqubeId">
+                <camunda:value>PLACEHOLDER_UBIQUBE_ID</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceName">
+                <camunda:value>Process/workflows/test_return_value/test_return_value</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="serviceInstanceId" />
+              <camunda:entry key="processName">
+                <camunda:value>Process/workflows/test_return_value/Process_not_pass_update</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processType">
+                <camunda:value>UPDATE</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processVariables">
+                <camunda:value>${JSON(Activity_04j5kr9).prop("variables").toString()}</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="resumeOnFail">
+                <camunda:value>true</camunda:value>
+              </camunda:entry>
+              <camunda:entry key="processExecutor">
+                <camunda:value>PLACEHOLDER_EXECUTOR_ID</camunda:value>
+              </camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ex87t7</bpmn:incoming>
+      <bpmn:outgoing>Flow_0s732ye</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_0jsof5v" name="End Event">
+      <bpmn:incoming>Flow_0s732ye</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0s732ye" sourceRef="Activity_0u45ukv" targetRef="Event_0jsof5v" />
+  </bpmn:process>
+  <bpmn:signal id="Signal_1eoribz" name="Signal_1eoribz" />
+  <bpmn:signal id="Signal_05t9s7q" name="Signal_05t9s7q" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
+      <bpmndi:BPMNEdge id="Flow_08k6kag_di" bpmnElement="Flow_08k6kag">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="260" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13dfk4q_di" bpmnElement="Flow_13dfk4q">
+        <di:waypoint x="360" y="120" />
+        <di:waypoint x="412" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yphbgt_di" bpmnElement="Flow_0yphbgt">
+        <di:waypoint x="448" y="120" />
+        <di:waypoint x="500" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jont9a_di" bpmnElement="Flow_1jont9a">
+        <di:waypoint x="600" y="120" />
+        <di:waypoint x="652" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ex87t7_di" bpmnElement="Flow_0ex87t7">
+        <di:waypoint x="688" y="120" />
+        <di:waypoint x="740" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s732ye_di" bpmnElement="Flow_0s732ye">
+        <di:waypoint x="840" y="120" />
+        <di:waypoint x="892" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="162.5" y="145" width="55" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1710340417902_di" bpmnElement="Activity_04j5kr9">
+        <dc:Bounds x="260" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0spbdaj_di" bpmnElement="Event_0spbdaj">
+        <dc:Bounds x="412" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="392" y="145" width="77" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1710340437428_di" bpmnElement="Activity_0rhvfwh">
+        <dc:Bounds x="500" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_19neqrx_di" bpmnElement="Event_19neqrx">
+        <dc:Bounds x="652" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="632" y="145" width="76" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1710340451721_di" bpmnElement="Activity_0u45ukv">
+        <dc:Bounds x="740" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0jsof5v_di" bpmnElement="Event_0jsof5v">
+        <dc:Bounds x="892" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="885" y="145" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
