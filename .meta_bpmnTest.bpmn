@@ -2,8 +2,8 @@
 <metadata>
     <map>
         <entry>
-            <key>DISPLAYNAME</key>
-            <value>bpmnTest.bpmn</value>
+            <key>TYPE</key>
+            <value>UPLOAD</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -11,17 +11,19 @@
         </entry>
         <entry>
             <key>TAG</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>COMMENT</key>
+            <value></value>
         </entry>
         <entry>
             <key>FILE_TYPE</key>
             <value>text</value>
         </entry>
         <entry>
-            <key>TYPE</key>
-            <value>UPLOAD</value>
-        </entry>
-        <entry>
-            <key>COMMENT</key>
+            <key>DISPLAYNAME</key>
+            <value>bpmnTest.bpmn</value>
         </entry>
     </map>
 </metadata>
