@@ -2,26 +2,20 @@
 <metadata>
     <map>
         <entry>
-            <key>DISPLAYNAME</key>
-            <value>SCB_dummyBPM</value>
+            <key>TYPE</key>
+            <value>UPLOAD</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
             <value>Bpmn</value>
         </entry>
         <entry>
-            <key>TAG</key>
-        </entry>
-        <entry>
             <key>FILE_TYPE</key>
             <value>text</value>
         </entry>
         <entry>
-            <key>TYPE</key>
-            <value>UPLOAD</value>
-        </entry>
-        <entry>
-            <key>COMMENT</key>
+            <key>DISPLAYNAME</key>
+            <value>SCB_dummyBPM</value>
         </entry>
     </map>
 </metadata>
