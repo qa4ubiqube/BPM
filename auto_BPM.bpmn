@@ -2,10 +2,10 @@
 <bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
   <bpmn:process id="PLACEHOLDER_PROCESS_ID" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Start Event">
-      <bpmn:outgoing>Flow_1krsm3e</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1dgdy63</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="Flow_1krsm3e" sourceRef="StartEvent_1" targetRef="Activity_1y1ww63" />
-    <bpmn:serviceTask id="Activity_1y1ww63" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
+    <bpmn:sequenceFlow id="Flow_1dgdy63" sourceRef="StartEvent_1" targetRef="Activity_0lpb05k" />
+    <bpmn:serviceTask id="Activity_0lpb05k" name="create instance (Helloworld)" camunda:type="external" camunda:topic="msa_workflow">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="workflow_data">
@@ -39,21 +39,21 @@
           </camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1krsm3e</bpmn:incoming>
-      <bpmn:outgoing>Flow_0m3f01u</bpmn:outgoing>
+      <bpmn:incoming>Flow_1dgdy63</bpmn:incoming>
+      <bpmn:outgoing>Flow_1x8b183</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="Event_0mae2oa" name="End Event">
-      <bpmn:incoming>Flow_0m3f01u</bpmn:incoming>
+    <bpmn:endEvent id="Event_10neoxe" name="End Event">
+      <bpmn:incoming>Flow_1x8b183</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0m3f01u" sourceRef="Activity_1y1ww63" targetRef="Event_0mae2oa" />
+    <bpmn:sequenceFlow id="Flow_1x8b183" sourceRef="Activity_0lpb05k" targetRef="Event_10neoxe" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PLACEHOLDER_PROCESS_ID">
-      <bpmndi:BPMNEdge id="Flow_1krsm3e_di" bpmnElement="Flow_1krsm3e">
+      <bpmndi:BPMNEdge id="Flow_1dgdy63_di" bpmnElement="Flow_1dgdy63">
         <di:waypoint x="209" y="120" />
         <di:waypoint x="260" y="120" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0m3f01u_di" bpmnElement="Flow_0m3f01u">
+      <bpmndi:BPMNEdge id="Flow_1x8b183_di" bpmnElement="Flow_1x8b183">
         <di:waypoint x="360" y="120" />
         <di:waypoint x="412" y="120" />
       </bpmndi:BPMNEdge>
@@ -63,10 +63,10 @@
           <dc:Bounds x="162.5" y="145" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1736015061692_di" bpmnElement="Activity_1y1ww63">
+      <bpmndi:BPMNShape id="ServiceTask_1736163425823_di" bpmnElement="Activity_0lpb05k">
         <dc:Bounds x="260" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0mae2oa_di" bpmnElement="Event_0mae2oa">
+      <bpmndi:BPMNShape id="Event_10neoxe_di" bpmnElement="Event_10neoxe">
         <dc:Bounds x="412" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="405" y="145" width="51" height="14" />
